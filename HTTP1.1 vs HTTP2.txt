@@ -1,0 +1,34 @@
+1. Protocol Structure:
+HTTP/1.1: Text-based protocol where each request and response is transmitted as plain text. This can lead to inefficiencies due to parsing overhead.
+
+HTTP/2: Binary-based protocol that optimizes data transmission by using binary framing. This results in faster parsing and reduced overhead.
+
+
+2. Multiplexing:
+HTTP/1.1: Uses multiple TCP connections to handle concurrent requests. However, this approach can lead to head-of-line blocking, where slower requests delay others.
+
+HTTP/2: Introduces multiplexing, allowing multiple requests and responses to be sent and received over a single TCP connection simultaneously. This eliminates head-of-line blocking and improves resource utilization.
+
+
+3. Header Compression:
+HTTP/1.1: Headers are sent with each request and response, leading to redundant data transmission and increased overhead.
+
+HTTP/2: Implements header compression using techniques like HPACK, which significantly reduces header size by eliminating redundancy. This results in lower bandwidth usage and improved latency.
+
+
+4. Server Push:
+HTTP/1.1: Relies on the client to request all necessary resources, leading to potential delays as resources are fetched sequentially.
+
+HTTP/2: Supports server push, allowing servers to proactively push resources to clients before they are requested. This reduces latency and optimizes resource loading, especially for related assets.
+
+
+5. Prioritization:
+HTTP/1.1: Does not provide mechanisms for prioritizing requests, leading to potential inefficiencies in resource loading.
+
+HTTP/2: Introduces request prioritization, allowing clients to specify the importance of different resources. This ensures critical resources are fetched first, enhancing overall performance.
+
+
+6. Compatibility:
+HTTP/1.1: Widely supported by most web servers and clients, with virtually universal compatibility across platforms.
+
+HTTP/2: Adoption is growing steadily, with major web servers and browsers adding support. However, full compatibility may require server and client upgrades.
